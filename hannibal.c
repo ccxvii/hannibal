@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define USE_ENVELOP 1
+#define USE_ENVELOPMENT 1
 #define USE_PROPORTION 1
 #define SHOW_ROUNDS 0
 
@@ -12,7 +12,7 @@
 int DIE = 100;
 int ITERATIONS = 10000;
 
-enum { FRONTAL, LEFT, RIGHT, PROBE, ENVELOP, RESERVE, BC_MAX };
+enum { FRONTAL, LEFT, RIGHT, PROBE, ENVELOPMENT, RESERVE, BC_MAX };
 
 const int card_count[] = { 12, 9, 9, 8, 6, 4 };
 
@@ -57,22 +57,24 @@ void print_hand(const char *name, int hand[])
 	printf(" ]\n");
 }
 
-int preferred_card(int hand[])
+int preferred_card(int atk_general, int def_general, int hand[])
 {
 	int i, prefer = FRONTAL;
-#ifdef USE_ENVELOP
-	for (i = 0; i < BC_MAX - 2; ++i)
-#else
-	for (i = 0; i < BC_MAX - 1; ++i)
+	int env = 2;
+#ifdef USE_ENVELOPMENT
+	if (def_general < atk_general) /* only use envelopment card if opposing general is weaker */
+		env = 1;
 #endif
+	for (i = 0; i < BC_MAX - env; ++i)
 #ifdef USE_PROPORTION
 		if ((double)hand[i]/card_count[i] > (double)hand[prefer]/card_count[prefer])
 #else
 		if (hand[i] > hand[prefer])
 #endif
 			prefer = i;
+	/* Use envelopment when we've run out of all other options */
 	if (hand[prefer] == 0)
-		prefer = ENVELOP;
+		prefer = ENVELOPMENT;
 	return prefer;
 }
 
@@ -105,7 +107,7 @@ int battle(int atk_general, int atk_BCs, int def_general, int def_BCs, int *roun
 
 	for (;;) {
 		if (atk_card < 0 || (atk[atk_card] == 0 && atk[RESERVE] == 0))
-			atk_card = preferred_card(atk);
+			atk_card = preferred_card(atk_general, def_general, atk);
 
 		//printf("Attack with %c (%d/%d)\n", card_abbr[atk_card], atk[atk_card], atk[RESERVE]);
 		if (atk[atk_card] > 0)
@@ -140,7 +142,7 @@ int battle(int atk_general, int atk_BCs, int def_general, int def_BCs, int *roun
 			} else {
 				//printf("Counter-attack failure (%d >  %d)\n", swap_roll, def_general);
 			}
-			if (atk_card == ENVELOP || (swap_roll <= def_general)) {
+			if (atk_card == ENVELOPMENT || (swap_roll <= def_general)) {
 				int *tmp = atk; atk = def; def = tmp;
 				int tmp_card = atk_card; atk_card = def_card; def_card = tmp_card;
 				int tmp_general = atk_general; atk_general = def_general; def_general = tmp_general;
