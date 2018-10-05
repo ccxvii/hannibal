@@ -166,14 +166,21 @@ void make_table(int atk_general, int def_general)
 	int ac, dc, v, r;
 	printf("%d/%d |", atk_general, def_general);
 	for (ac = 1; ac <= 20; ++ac)
-		printf(" %3d", ac);
+		printf(" %2d", ac);
 	printf("\n");
-	printf("----+--------------------------------------------------------------------------------\n");
+	printf("----+------------------------------------------------------------\n");
 	for (dc = 1; dc <= 20; ++dc) {
 		printf("%3d |", dc);
 		for (ac = 1; ac <= 20; ++ac) {
 			v = run_battle(atk_general, ac, def_general, dc, &r);
-			printf(" %3d", v);
+#if SHOW_ROUNDS
+			printf(" %2d", r);
+#else
+			if (v >= 100)
+				printf(" 00");
+			else
+				printf(" %2d", v);
+#endif
 		}
 		printf("\n");
 	}
