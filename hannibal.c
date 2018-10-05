@@ -3,11 +3,14 @@
 #include <stdlib.h>
 #include <time.h>
 
-#define ITERATIONS 10000
 #define USE_ENVELOP 1
 #define USE_PROPORTION 1
+#define SHOW_ROUNDS 0
 
 #define MIN(a,b) ((a)<(b)?(a):(b))
+
+int DIE = 100;
+int ITERATIONS = 10000;
 
 enum { FRONTAL, LEFT, RIGHT, PROBE, ENVELOP, RESERVE, BC_MAX };
 
@@ -155,13 +158,13 @@ int run_battle(int atk_general, int ac, int def_general, int dc, int *rp)
 		v += battle(atk_general, ac, def_general, dc, &r, &f);
 		*rp += r;
 	}
-	return *rp = round((float)*rp / i), 100 * v / i;
+	return *rp = round((float)*rp / i), DIE * v / i;
 }
 
 void make_table(int atk_general, int def_general)
 {
 	int ac, dc, v, r;
-	printf("%dv%d |", atk_general, def_general);
+	printf("%d/%d |", atk_general, def_general);
 	for (ac = 1; ac <= 20; ++ac)
 		printf(" %3d", ac);
 	printf("\n");
@@ -178,15 +181,19 @@ void make_table(int atk_general, int def_general)
 
 int main(int argc, char **argv)
 {
-	int atk_general = 0;
+	int atk_general = 1;
 	int def_general = 0;
 
 	srand48(time(NULL));
 
-	if (argc == 3) {
+	if (argc >= 3) {
 		atk_general = atoi(argv[1]);
 		def_general = atoi(argv[2]);
 	}
+	if (argc >= 4)
+		DIE = atoi(argv[3]);
+	if (argc >= 5)
+		ITERATIONS = atoi(argv[4]);
 
 	make_table(atk_general, def_general);
 
