@@ -41,22 +41,19 @@ int run_battle(int aBR, int aCU, int aMod, int dBR, int dCU, int dMod)
 	return DIE * v / (2*2*10*10);
 }
 
-void make_table(int atk_general, int def_general)
+void make_table(int aBR, int aMod, int dBR, int dMod)
 {
 	int ac, dc, v;
-	printf("%d/%d |", atk_general, def_general);
+	printf("%d%+d/%d%+d |", aBR, aMod, dBR, dMod);
 	for (ac = 1; ac <= 5; ++ac)
-		printf(" %2d", ac);
+		printf(" %3d", ac);
 	printf("\n");
-	printf("----+---------------\n");
+	printf("-------+---------------------\n");
 	for (dc = 1; dc <= 10; ++dc) {
-		printf("%3d |", dc);
+		printf("    %3d |", dc);
 		for (ac = 1; ac <= 5; ++ac) {
-			v = run_battle(atk_general, ac, 0, def_general, dc, 0);
-			if (v >= 100)
-				printf(" 00");
-			else
-				printf(" %2d", v);
+			v = run_battle(aBR, ac, aMod, dBR, dc, dMod);
+			printf(" %3d", v);
 		}
 		printf("\n");
 	}
@@ -66,17 +63,21 @@ int main(int argc, char **argv)
 {
 	int atk_general = 1;
 	int def_general = 0;
-
-	srand48(time(NULL));
+	int atk_mod = 0;
+	int def_mod = 0;
 
 	if (argc >= 3) {
 		atk_general = atoi(argv[1]);
 		def_general = atoi(argv[2]);
 	}
-	if (argc >= 4)
-		DIE = atoi(argv[3]);
+	if (argc >= 5) {
+		atk_mod = atoi(argv[3]);
+		def_mod = atoi(argv[4]);
+	}
+	if (argc >= 6)
+		DIE = atoi(argv[5]);
 
-	make_table(atk_general, def_general);
+	make_table(atk_general, atk_mod, def_general, def_mod);
 
 	return 0;
 }
