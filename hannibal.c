@@ -160,7 +160,16 @@ int run_battle(int atk_general, int ac, int def_general, int dc, int *rp)
 		v += battle(atk_general, ac, def_general, dc, &r, &f);
 		*rp += r;
 	}
-	return *rp = round((float)*rp / i), DIE * v / i;
+	*rp = round((float)*rp / i); // average number of rounds
+
+	float die_margin = 0.25 / DIE;
+	float victory_chance = (float) v / i;
+	if (victory_chance < die_margin)
+		return 0;
+	for (i = 1; i <= DIE; ++i)
+		if (victory_chance <= (float)i/DIE)
+			return i;
+	return DIE;
 }
 
 void make_table(int atk_general, int def_general)
@@ -178,8 +187,10 @@ void make_table(int atk_general, int def_general)
 #if SHOW_ROUNDS
 			printf(" %2d", r);
 #else
-			if (v >= 100)
-				printf(" 00");
+			if (v == DIE)
+				printf("  *");
+			else if (v == 0)
+				printf("  -");
 			else
 				printf(" %2d", v);
 #endif
