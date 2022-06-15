@@ -2,33 +2,43 @@
 <html>
 <head>
 <style>
-html { margin:0 2rem; font-family: "Source Serif 4"; line-height: 1.25em; }
+html { margin:0 2rem; font-family: "Source Serif 4"; line-height: 1.2em; }
 body { margin:0 auto; max-width:50em; }
-h2, h3 { break-after: avoid; }
-h2:not(.nb) { break-before: always; }
+header { text-align: center; }
+h2, h3 { break-after: avoid; line-height: 1.2em}
+h2:first-child {margin-top:0;}
+.pb { break-before: always; }
 h2 { font-size: 1.4rem; margin: 2rem 0 1rem 0; }
 h3 { font-size: 1.2rem; margin: 1rem 0; }
 ul, ol { margin: 1rem 0; }
-li, .cardlist p { margin: 0.5rem 0; }
+li, .cardlist p { margin: 0.25rem 0; }
 .inv li, .inv ul { margin: 0 }
 ol.alpha { list-style: upper-alpha; }
 p.example { color: #333; padding: 0.6rem 1rem; background-color: whitesmoke; }
 p, li { orphans: 3; widows: 3; }
 @media print {
-	h1 { margin:0 }
-	html { column-count: 2; column-gap: 4rem; column-fill: auto; margin: 0; font-size: 10pt; }
+	p.example { font-size: 8pt; line-height: 10pt; }
+	h1 { margin: 0 }
+	header { margin: 12pt 0 }
+	html { margin: 0; font-size: 10pt; line-height: 12pt; }
+	h2 { font-size: 14pt; line-height: 16pt; }
+	h3 { font-size: 12pt; line-height: 14pt; }
+	main { column-count: 2; column-gap: 3rem; column-fill: auto; }
 	a { color: black; text-decoration: none; }
 }
 </style>
 </head>
 <body>
-<h1 class="nb">Hannibal 2nd Edition</h2>
+<header>
+<h1>Hannibal 2nd Edition</h1>
 <p>By Mark Simonitch, Bruce Wigdor, and Jung Yueh
+</header>
 
-<h2 class="nb" id="1">1. INTRODUCTION</h2>
+<main>
+<h2 id="1">1. INTRODUCTION</h2>
 <p><i>Hannibal: Rome vs. Carthage</i> is a two-player game based on the 2nd Punic War between Carthage and Rome. One player is the Romans and the other is the Carthaginians.
 
-<h2 class="nb" id="2">2. GAME COMPONENTS</h2>
+<h2 id="2">2. GAME COMPONENTS</h2>
 
 <h3 id="2.1">2.1. Inventory</h3>
 <p>A complete game of Hannibal includes:
@@ -87,7 +97,7 @@ p, li { orphans: 3; widows: 3; }
 <p>Spain (Hispania): All spaces in the four Provinces of Baetica, Celtiberia, Orospeda, and Idubeda.
 </dl>
 
-<h2 id="4">4. SETTING UP THE GAME</h2>
+<h2 class="pb" id="4">4. SETTING UP THE GAME</h2>
 <p>Place the turn marker in the turn 1space (218 B.C.) on the Turn Record Track, and set up the playing pieces as indicated below.
 
 <h3 id="4.1">4.1. Roman Setup</h3>
@@ -112,7 +122,7 @@ p, li { orphans: 3; widows: 3; }
 <h3 id="4.4">4.4. Event &amp; Battle Decks</h3>
 <p>Separately shuffle the deck of 48 Battle Cards and the deck of 64 Strategy Cards and place the two decks off to the side. You are now ready to play.
 
-<h2 id="5">5. SEQUENCE OF PLAY</h2>
+<h2 class="pb" id="5">5. SEQUENCE OF PLAY</h2>
 <p><i>Hannibal: Rome vs. Carthage</i> is played in turns, each of which must be played in the following order:
 <ol>
 <li>Reinforcement Phase (Skip this phase on Turn 1).
@@ -155,7 +165,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="6.3">6.3. Restrictions on Placement</h3>
 <p>Reinforcements may not be placed inside a besieged Walled City <a href="#20.4">[20.4]</a>. An enemy general without CUs does not restrict the placement of reinforcements and would be displaced <a href="#10.10">[10.10]</a> if reinforcements are placed in that space. If Rome is besieged and all Roman generals are inside Rome, than the Roman player does not receive any reinforcements except those arriving with Scipio Africanus. The same is true with the area specific Carthaginian reinforcements: if New Carthage is besieged and all Carthaginian generals in Spain are inside that city, then the Carthaginian player would lose those two CUs.
 
-<h3 id="6.4">6.4. Electing Consuls and Proconsuls</h3>
+<h3 class="pb" id="6.4">6.4. Electing Consuls and Proconsuls</h3>
 <p>Rome in 218 B.C. was a republic ruled by the Senate. Wishing to avoid the pitfalls of kings and dictators, the Senate was very careful not to give too much power to military leaders. As such, during a war they would elect two consuls each year to lead the army or armies. At the end of each year two new consuls would be elected, but in some cases a consul would be allowed to remain with his army if the situation required it (or if he was doing well), in which case the Senate made him a proconsul.
 <p>PROCEDURE: The Roman player, during the Reinforcement Phase of each turn (except the first), must follow the procedures below for his generals:
 <ol>
@@ -189,7 +199,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="7.4">7.4. Ending the Strategy Phase</h3>
 <p>The players continue to alternate playing Strategy Cards until all cards in each player&apos;s hand have been played. At this point, the Strategy Phase ends. It is possible that one player may use all of his Strategy Cards while his opponent still has several left in his hand. In this case, the player who still has Strategy Cards plays them one at a time until he has played all of them.
 
-<h2 id="8">8. STRATEGY CARDS</h2>
+<h2 class="pb" id="8">8. STRATEGY CARDS</h2>
 
 <h3 id="8.1">8.1. Description</h3>
 <p>Each Strategy Card has two primary elements, a number between 1 and 3 in the upper left corner (called the Operation Number) and an event. The operation number is used to activate generals or place PC markers. The event is only available if the operation number is not used. A ship symbol in the upper right corner (on Ops 3s and campaign cards) indicates the card can be used for Sea Movement.
@@ -217,7 +227,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="8.7">8.7. Reshuffling</h3>
 <p>If there are not enough Strategy Cards in the Strategy Deck to deal a full hand to each player for the upcoming turn, the entire Strategy Deck (excluding cards that have been permanently removed from play) is reshuffled before any cards are dealt. The deck is also reshuffled when the Truce card is played or discarded (it doesn&apos;t matter if the event is used or not). In this case, the deck is reshuffled at the end of the turn.
 
-<h2 id="9">9. STACKING AND SUBORDINATION</h2>
+<h2 class="pb" id="9">9. STACKING AND SUBORDINATION</h2>
 
 <h3 id="9.1">9.1. Stacking CUs</h3>
 <p>There is no limit to the number of CUs that can be stacked in a space.
@@ -232,7 +242,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <li>Consuls outrank Proconsuls
 </ul>
 
-<h2 id="10">10. MOVEMENT</h2>
+<h2 class="pb" id="10">10. MOVEMENT</h2>
 
 <h3 id="10.1">10.1. Who May Move</h3>
 <p>Generals may move with or without CUs. Combat Units (CUs) cannot be moved unless accompanied by a general. A general can be moved only when a strategy card is played that permits it. A general and the CUs stacked with him are collectively called an army. Only one army moves with each strategy card unless a campaign card is played <a href="#10.9">[10.9]</a>. The same army may be activated each strategy card play.
@@ -250,7 +260,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 </ol>
 
 <h3 id="10.3">10.3. Reaction Phase</h3>
-<p>DESIGNER&apos;S NOTE: This is not a new rule, just a method to organize the existing rules. Each space an army enters may trigger a possible reaction by the non-Active Player. This is called the Reaction Phase and follows this sequence:
+<p class="example">DESIGNER&apos;S NOTE: This is not a new rule, just a method to organize the existing rules. Each space an army enters may trigger a possible reaction by the non-Active Player. This is called the Reaction Phase and follows this sequence:
 <ol>
 <li> If the space contains a Walled City the non-active player declares his CUs inside or outside the city and moves them above or below the Walled City Marker as appropriate.
 <li> The non-active player declares all his Interceptions and Avoid Battle Attempts. All must be declared before any are carried out and the non-active player is required to attempt all those he designated.
@@ -300,7 +310,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="10.12">10.12. Nero</h3>
 <p>Nero has the special ability to move 6 spaces during campaigns. CUs and subordinates that accompany Nero may move six spaces as long as their entire movement is with him (i.e., they cannot be moved four spaces by one general and then two more with Nero).
 
-<h2 id="11">11. NAVAL MOVEMENT</h2>
+<h2 class="pb" id="11">11. NAVAL MOVEMENT</h2>
 
 <h3 id="11.1">11.1. Procedure</h3>
 <p>A general (with or without CUs) may move from a port space to any other port space using Naval Movement. CUs by themselves may not use Naval Movement. Naval Movement is possible when a 3-strategy card or a Campaign event is played (a ship icon appears in the upper right-hand corner of such cards for easy recognition). The movement cost to use Naval Movement is equal to three spaces.
@@ -318,7 +328,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="11.5">11.5. Roman Naval Supremacy</h3>
 <p>The Roman player enjoys naval supremacy, so any Carthaginian Sea Movement runs the risk of being sunk. Each time a Carthaginian general or army moves by sea, the Roman player rolls on the Naval Combat Table. If after applying the appropriate die roll modifiers, the force is sunk, then the CUs are eliminated and the general is displaced <a href="#10.10">[10.10]</a>. If the force must return, it returns to the port of embarkation and the balance of its movement is lost. CUs lost at sea do not count towards Political Consequences <a href="#15.5">[15.5]</a>.
 
-<h3 id="11.6">11.6. Naval Combat Table Modifiers</h3>
+<h3 class="pb" id="11.6">11.6. Naval Combat Table Modifiers</h3>
 <p>The Roman player modifies his Naval Combat Table die roll appropriately:
 <ul>
 <li>+/- both port modifiers* (see map)
@@ -332,7 +342,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <p class="example">EXAMPLE: Your Carthaginian opponent sends an army from Carthage (port modifier: -2) to New Carthage (port modifier: - 2); the cumulative modifier is -4.
 <p class="example">EXAMPLE: He sends an army with only one CU (-1) from New Carthage (-2) to Rhegium (+1). Rhegium contains a Roman PC giving you another +1 modifier. The net modifier is (-1) + (-2) + (+1) + (+1) = -1.
 
-<h2 id="12">12. INTERCEPTION</h2>
+<h2 class="pb" id="12">12. INTERCEPTION</h2>
 
 <h3 id="12.1">12.1. In General</h3>
 <p>Interception is a special kind of movement that allows a non-active army to advance one space during an opposing general&apos;s move and interrupt the movement of the enemy army. Interception forces the moving army to fight a battle <a href="#14">[14]</a> or back up one space <a href="#12.5">[12.5]</a>.
@@ -368,7 +378,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="12.10">12.10. Failed Interceptions and Avoid Battle</h3>
 <p>If an army fails an interception attempt it is prohibited from attempting an avoid battle against that same army during the current card play. The army that failed the interception may still attempt other interceptions without restrictions, and may even attempt to avoid battle against other armies if the current card play is a campaign.
 
-<h2 id="13">13. AVOIDING BATTLES AND PURSUIT</h2>
+<h2 class="pb" id="13">13. AVOIDING BATTLES AND PURSUIT</h2>
 
 <h3 id="13.1">13.1. Avoid Battle</h3>
 <p>This option is available to the non-active player only. If an enemy army enters a space containing one of your armies or one or more of your generals without CUs, you may attempt to avoid battle. To determine if the attempt succeeds, roll the die. If the die roll is less than or equal to your commanding general&apos;s Battle Rating, the Avoid Battle succeeds. A successful Avoid Battle allows you to move your army or generals out of the space and into any adjacent space (see restrictions below). If the die roll was greater than the commanding general&apos;s Battle Rating, then the army/generals remains in the space and a battle is resolved (or the generals are displaced). For botching the retreat and for the temporary reduction in moral this would cause, you receive one less Battle Card in the ensuing battle.
@@ -396,7 +406,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="13.6">13.6. Sieges/Subjugation and Pursuit</h3>
 <p>An army that fails its pursuit die roll but ends its move on a Walled City or Tribe space may still conduct a siege or subjugation against the site.
 
-<h2 id="14">14. BATTLES</h2>
+<h2 class="pb" id="14">14. BATTLES</h2>
 
 <h3 id="14.1">14.1. Battle Cards (BC)</h3>
 <p>Battles are resolved using Battle Cards. After the battle is over, all BCs are shuffled back into the Battle Card Deck. Each player draws a number of BCs as described below:
@@ -469,7 +479,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <p>ELEPHANTS: If there are elephant CUs in the defeated army the first CU removed must be an elephant CU. All other loses may come from non-elephant CUs. Note that a player could lose two elephant CUs in a battle if he lost the first with a die roll of 6 in Battle Attrition and then lost the second on the retreat table.
 <p>ALL CARDS EXHAUSTED: There is no die roll modifier to the retreat table when the attacker loses by running out of cards. Simply use the face value of the die roll on the retreat table.
 
-<h2 id="15">15. RETREATS</h2>
+<h2 class="pb" id="15">15. RETREATS</h2>
 
 <h3 id="15.1">15.1. Retreat Procedure</h3>
 <p>After battle casualties and retreat table losses have been removed, the loser of a battle must retreat his force and suffer the political consequences of the defeat. The loser of the battle must retreat to a space that is both friendly controlled (contains a friendly PC) and clear of enemy CUs or to a space that contains more friendly CUs than the retreating force. If you have more than one space that you may retreat your force to, you must pick the closest one (if two or more are equidistant, the retreating player may choose). You may not leave behind any CUs or generals as you retreat, and any friendly CUs encountered along the retreat path (if they do not outnumber the retreating CUs) are swept up in the retreat and become part of the retreating force. The 10 CU movement limit does not apply during retreats; any size force (commanded by a general or not) defeated in battle must be retreated.
@@ -501,7 +511,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="15.6">15.6. Sue for Peace</h3>
 <p>If, as a result of battle, the loser is unable to remove enough PC markers to satisfy the Political Consequences of defeat, the player must instantly sue for peace, thereby losing the game <a href="#22.3">[22.3]</a>.
 
-<h2 id="16">16. WITHDRAWALS</h2>
+<h2 class="pb" id="16">16. WITHDRAWALS</h2>
 
 <h3 id="16.1">16.1. In General</h3>
 <p>Withdrawals are a way for the current attacker (not necessarily the original attacker) to break off from a battle. To withdraw, the attacker must forfeit his chance to play a BC and roll less than or equal to his commanding general&apos;s Battle Rating. The defender can cancel the withdrawal by rolling less than or equal to his commanding general&apos;s Battle Rating (the defender is not required to roll). If the attacker&apos;s withdraw die roll was not successful, or if the defender canceled the withdrawal, the defender MAY immediately take the initiative and become the attacker. There is no limit to the number of times you may attempt to withdraw in a single battle.
@@ -518,7 +528,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <li>You may not withdraw into a space containing a non-friendly tribe.
 </ul>
 
-<h2 id="17">17. ELEPHANTS</h2>
+<h2 class="pb" id="17">17. ELEPHANTS</h2>
 <p>The Carthaginian used elephants as a shock weapon in battles. The sight of elephants bearing down on them was often enough to make many troops break and run. Some Roman generals learned how to defend against elephants (frighten them back the other way).
 
 <h3 id="17.1">17.1. Receiving Elephants</h3>
@@ -536,7 +546,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="17.5">17.5. Rampaging Elephants</h3>
 <p>If a &quot;1&quot; is rolled, then the Carthaginian hand size is immediately reduced by one BC (no matter how many CUs with Elephants were involved in the charge). Being more familiar with elephants, an elephant reversal would not be as detrimental to the Carthaginian army.
 
-<h2 id="18">18. CONSULS AND CONSULAR ARMIES</h2>
+<h2 class="pb" id="18">18. CONSULS AND CONSULAR ARMIES</h2>
 <p>The two Roman Consuls had no authority over each other. Each was given command of approximately equal forces and this caused considerable coordination problems when they needed to combine. It was not uncommon for Consuls to share command of the combined army by allowing one to command one day and the other the next day.
 
 <h3 id="18.1">18.1. Consular Armies</h3>
@@ -551,7 +561,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <p>A consul outranks a proconsul and whenever the proconsul ends its move with a consul he becomes a subordinate. However, an army led by a proconsul is allowed to be larger than the Consular Armies and may pass through, a Consular Army containing 5 or more CUs without restrictions. If an army led by a proconsul enters a space containing a Consular Army with less than 5 CUs it must either stop and ends it movement, or drop off enough CUs so the Consular Army once again has 5 CUs. A proconsul that starts the turn stacked with a Consular Army may be activated and sent off with up to 10 CUs, or left behind with any number of CUs, as long as rule 18.1 is not violated.
 <p>First edition rules which prevented a proconsul from leaving a Consular Army with more CUs than the Consular Army, and required that a Consular Army stop upon entering a space containing an army led by a proconsul if that proconsul&apos;s army is larger, are no longer in affect.
 
-<h2 id="19">19. POLITICAL CONTROL</h2>
+<h2 class="pb" id="19">19. POLITICAL CONTROL</h2>
 
 <h3 id="19.1">19.1. Political Control</h3>
 <p>Players gain control of a space and control of a province through placement of PC markers. A player controls a space if he has a PC marker in it. A player controls a Province if he controls the majority of the spaces in the Province (having the majority of the PC markers in a province is not by itself sufficient for Political Control). A space containing a PC marker remains under the control of the owning player even if an enemy general and/or CUs are also present.
@@ -573,7 +583,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="19.4">19.4. Removing Isolated PC Markers</h3>
 <p>During the Political Isolation Phase, each player (starting with the Roman Player) must remove all his non-walled, non-tribal PC markers that are isolated. A PC marker is isolated if the player cannot trace a path of spaces from the PC marker to a friendly CU or a friendly controlled Walled City, Tribe or port. A besieged Walled City can still supply other PC markers. The path cannot cross a mountain pass, nor enter a space containing an enemy PC marker or neutral Tribe unless a friendly CU is present in that space. The path may enter and exit a space that contains enemy CUs only if the space also contains a friendly PC.
 
-<h2 id="20">20. SIEGES AND SUBJUGATION</h2>
+<h2 class="pb" id="20">20. SIEGES AND SUBJUGATION</h2>
 
 <h3 id="20.1">20.1. Converting Walled Cities and Tribes</h3>
 <p>Walled Cities and Tribes are PC markers that are difficult to convert. The only way to convert a Walled City is to conduct a successful siege against it or to play an event card that affects it. The only way to remove a Tribe is to subjugate it.
@@ -583,7 +593,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 
 <h3 id="20.3">20.3. Subordinates and Sieges/Subjugation</h3>
 <p>In the first edition players would detach a subordinate with 3 CUs from a besieging army and move it out and then right back in, allowing the player to make a siege attempt without activating the commanding general. This rule is now acknowledged as legal, and furthermore the subordinate no longer has to exit the space to conduct the siege or subjugation. Simply announce the subordinate is conducting the siege or subjugation. A subordinate conducting a siege or subjugation is considered temporarily in command and may use his special ability. If this occurs during the play of a campaign card, only 3 CUs (or 5 CUs for a Consul) plus the activated subordinate are considered to have been moved. The remaining units and generals in the space are available for further operations on the campaign card.
-<p>DESIGN NOTE: Unlike a battle, an officer other than the commanding general often conducted the siege or subjugation.
+<p class="example">DESIGN NOTE: Unlike a battle, an officer other than the commanding general often conducted the siege or subjugation.
 
 <h3 id="20.4">20.4. Siege Status</h3>
 <p>A city is not considered Besieged until it is marked with one or more siege points regardless of the number of siege attempts that have been made against it or the number of enemy CUs in the same space.
@@ -603,13 +613,14 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="20.9">20.9. Tribes Friendly to Carthage</h3>
 <p>The Carthaginian player begins the game with three Tribes friendly to him - the Boians, the Insubrians and the Bruttiums. The Carthaginian player may consider these three Tribes as Friendly PC markers in all respects (including Province control, a space to retreat to, and for isolating Roman PCs). These Tribe markers serve as a place where other Carthaginian PCs may trace to prevent isolation <a href="#19.4">[19.4]</a>, and provide the Carthaginian player with an extra BC if a battle (with or without a Carthaginian general) occurs in the Tribe&apos;s space.
 
-<h2 id="21">21. Attrition</h2>
+<h2 id="21">21. ATTRITION</h2>
 
 <h3 id="21.1">21.1. When Attrition Occurs</h3>
 <p>Attrition can occur for the following reasons:
 <ul>
 <li>WINTER ATTRITION: During the Winter Attrition Phase, all CUs (with or without generals) in spaces containing an enemy PC marker or a non-friendly Tribe suffer Attrition. Players conducting sieges against a city should be aware that their CUs are in a space with an enemy PC marker and will suffer Winter Attrition if still there at the end of the turn.
-<li>MOUNTAIN PASS ATTRITION (Optional): Any time an army crosses a Mountain Pass, that army suffers Attrition. See Attrition Table for die roll modifiers. Second edition modifiers are: Alps = 0, non-Alps = -2. DESIGNER&apos;S NOTE: While Hannibal had a tough time crossing the Alps, it normally was not a difficult a military operation. Hannibal&apos;s experience can be attributed to bad luck and a probably a traitor for a guide.
+<li>MOUNTAIN PASS ATTRITION (Optional): Any time an army crosses a Mountain Pass, that army suffers Attrition. See Attrition Table for die roll modifiers. Second edition modifiers are: Alps = 0, non-Alps = -2.
+<p class="example">DESIGNER&apos;S NOTE: While Hannibal had a tough time crossing the Alps, it normally was not a difficult a military operation. Hannibal&apos;s experience can be attributed to bad luck and a probably a traitor for a guide.</i>
 <li>EVENTS: When triggered by an Event Card (e.g., Hostile Tribe, Mercenaries Desert, Epidemic, Storm at Sea, and Pestilence).
 </ul>
 
@@ -619,7 +630,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3 id="21.3">21.3. Hostile Tribes</h3>
 <p>If attacked by Hostile Tribes (cards #7 &amp; #8) the size of your army does not matter. Use the column on the attrition tabled marked Hostile Tribes.
 
-<h2 id="22">22. VICTORY CHECK PHASE</h2>
+<h2 class="pb" id="22">22. VICTORY CHECK PHASE</h2>
 <p>Players count Political Points to see if one side loses PCs for Political Repercussions.
 
 <h3 id="22.1">22.1. Procedure</h3>
@@ -643,7 +654,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <li>Either player wins a Sudden Death Victory if his opponent sues for peace {<a href="#15.6">[15.6]</a> and <a href="#22.3">[22.3]</a>}.
 </ul>
 
-<h2 id="24">24. SPECIAL ABILITIES</h2>
+<h2 class="pb" id="24">24. SPECIAL ABILITIES</h2>
 <p>RULE: Each general has a special ability as indicated below his Holding Box. A general&apos;s special ability can only be used when he is a commanding general. Most special abilities are self explanatory but the following generals require further clarifications:
 <p>HANNO: Hanno may not leave Africa, but he may sail from one African port to another. Hanno may only use his special ability to remove a Roman PC if his army does not engage in battle. Hanno may conduct one or more overruns and still be able to use his special ability.
 <p>FABIUS: Fabius may not leave Italy, but may sail from one Italian port to another. If there is not at least one stack of 5 CUs in Italy, then Fabius is placed with any friendly CUs in Italy (doesn&apos;t have to be the largest stack). If there are no CUs in Italy, Fabius is placed in Rome (even if under siege).
@@ -654,7 +665,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <p>LONGUS: His special ability does not apply to preventing a withdraw.
 <p>PAULUS: His special ability does not apply to preventing a withdraw.
 
-<h2 id="25">25. STRATEGY CARD LIST</h2>
+<h2 class="pb" id="25">25. STRATEGY CARD LIST</h2>
 
 <div class="cardlist">
 <p>1. Corsica and Sardinia Revolt
@@ -717,7 +728,7 @@ Consuls <a href="#6.4">[6.4]</a>.
 <p>64. Truce: No interceptions are allowed during a Truce. No siege attempts are allowed either but players may keep their armies outside the city walls to retain their accumulated siege points. A Truce has no affect on subjugation of green Tribes. No matter how the truce is played the deck is reshuffled at the end of the turn (the reshuffling does not break the Truce). Carthaginian Naval Movement is not affected by Roman Naval Supremacy during a Truce; however, Naval Movement can still be affected by Storms at Sea. If you have friendly units on enemy PC Markers when a Truce starts, your units may remain there. Enemy PC Markers underneath your units may not be converted and CUs on top of enemy PC Markers at the end of the turn still suffer attrition.
 </div>
 
-<h3>CARDS WHICH DO NOT BREAK THE TRUCE</h3>
+<h3 class="pb" >CARDS WHICH DO NOT BREAK THE TRUCE</h3>
 <p>Counter cards (storm at sea, bad weather, etc.) do not end a truce, nor is a truce broken when an event is played that does not occur (e.g. Allied Auxiliaries when there are not generals in Italy to take the CUs). Events that move an army also do not break the Truce.
 
 <h3>CARDS WHICH BREAK THE TRUCE</h3>
@@ -731,5 +742,6 @@ Consuls <a href="#6.4">[6.4]</a>.
 <h3>Reinforcement Cards and Besieged Walled Cities</h3>
 <p>All events that bring reinforcements on to the map (Allied Auxiliaries, etc) are under the same restriction as reinforcements in regards to besieged walled cities.
 
+</main>
 </body>
 </html>
